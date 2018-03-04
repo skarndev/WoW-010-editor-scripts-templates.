@@ -1369,8 +1369,17 @@ n++;
 }
 FSeek(ofsAttachLookup);
 int16 _AttachLookup[nAttachLookup];
+
+if(ofsEvents!=0){
 FSeek(ofsEvents);
-sEvents _Events[nEvents];
+struct{
+local int n=0;
+while(n<nEvents){
+sEvents _Events;
+n++;
+}
+}Events;
+}
 
 FSeek(ofsBoundingTriangles);
 BoundingTriangle _BoundingTriangles[nBoundingTriangles];
